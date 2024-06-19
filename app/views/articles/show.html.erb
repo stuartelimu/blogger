@@ -19,7 +19,10 @@
 
 <%= link_to "<< Back to Articles List", articles_path %>
 
+<% if logged_in? %>
 <%= link_to "delete", article_path(@article), data: { "turbo-confirm": "Really delete the article?", "turbo-method": :delete }
  %>
 
  <%= link_to "edit", edit_article_path(@article) %>
+
+<% end %>
