@@ -3,6 +3,8 @@ class Article < ApplicationRecord
 	has_many :taggings
 	has_many :tags, through: :taggings
 
+	has_one_attached :image
+
 	def tag_list
 		tags.join(",")
 	end

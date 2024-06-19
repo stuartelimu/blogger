@@ -5,7 +5,11 @@
     <%= link_to tag.name, tag_path(tag) %>
   <% end %>
 </p>
-
+<p>
+<% if @article.image.attached? %>
+  <%= image_tag @article.image %>
+<% end %>
+</p>
 <p><%= @article.body %></p>
 
 <h3>Comments (<%= @article.comments.size %>)</h3>
